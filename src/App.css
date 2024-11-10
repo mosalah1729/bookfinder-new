@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+/* Ensure body and html take the full height of the screen */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/bg.jpg'); /* Local image path or URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+body {
+  background-image: url('hhttps://wallpapercave.com/wp/wp4581480.jpg'); /* Local image path or URL */
+}
+
+/* App container should occupy the full screen */
+.app {
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Adjust alignment for better scrolling behavior */
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: rgba(
+    255,
+    182,
+    193,
+    0.6
+  ); /* Pastel pink with transparency */
+  backdrop-filter: blur(3px); /* Apply blur effect to the area behind the app */
+  box-sizing: border-box;
+  border-radius: 14px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 1px solid rgba(255, 182, 193, 0.6); /* Light border to enhance the pastel effect */
+  max-height: 90vh; /* Limit the height of the container (optional) */
+}
+
+/* Optional: Dark overlay for better text contrast */
+.app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  border-radius: 8px;
+  z-index: -1; /* Make sure the overlay is behind the content */
+}
+
+/* Other components inside the app (Header, Book List, etc.) */
+.header {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+/* Style for the h1 element */
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem; /* Larger size */
+  color: #ffffff; /* White text for contrast */
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  text-shadow: 2px 2px 5px rgba(84, 199, 222, 0.5); /* Shadow for text */
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Style for the search input box */
+input[type='text'] {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px; /* Ensure the padding is the same as the button */
+  margin-top: 20px;
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 8px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Semi-transparent white background */
+  backdrop-filter: blur(8px); /* Blur effect for the background */
+  font-size: 1rem;
+  color: #333; /* Dark text color for contrast */
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  outline: none;
+  height: 50px; /* Explicit height to match the button */
+}
+
+/* Style for the button */
+button[type='submit'] {
+  padding: 12px 20px; /* Same padding as input box */
+  height: 50px; /* Set height equal to the input */
+  border: 2px solid #ffffff; /* White border */
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #ffffff; /* White text */
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  box-sizing: border-box; /* Ensure the padding doesn't overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type='submit']:hover {
+  background-color: rgba(
+    255,
+    150,
+    188,
+    0.8
+  ); /* Highlight with orange color on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+}
+
+button[type='submit']:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow on focus */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 600px) {
+  input[type='text'],
+  button[type='submit'] {
+    width: 100%;
+    padding: 10px 15px;
+  }
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+.book {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(
+    255,
+    235,
+    238,
+    0.6
+  ); /* Pastel pink with transparency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  text-align: center;
+}
+
+.book:hover {
+  transform: scale(1.05);
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.book-info {
+  margin-top: 10px;
+}
+
+.book-info h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.book-info p {
+  color: #666;
+  font-size: 0.9rem;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.book-details {
+  height: 400px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px; /* Optional, for padding inside the container */
+
+  max-height: 100%; /* Ensure it takes up available height inside its parent */
+}
+
+/* Optional: Style for content inside .book-details */
+.book-info {
+  padding: 15px;
+  /* background-color: #fff; */
+  margin-bottom: 15px;
+  border-radius: 5px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* Disable scrollbar for the entire body */
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling of the entire page */
+}
+
+.app {
+  overflow-y: auto; /* Enable scrolling only inside the app */
+  height: 100%; /* Ensure the app container is full height */
+}
+h2 {
+  font-family: 'Bree Serif', serif; /* Use a decorative font */
+  font-size: 2rem; /* Adjust the font size */
+  color: #333; /* Set the text color */
+  text-align: start; /* Center align the text */
+  margin-bottom: 10px; /* Add space below the title */
+  text-shadow: 2px 2px 5px rgba(84, 199, 222, 0.5);
+}
+.author {
+  font-family: 'Bree Serif', serif; /* Applies Bree Serif font */
+  font-size: 1.2em; /* Sets font size */
+  color: #333333; /* Sets text color */
+  margin-top: -1em; /* Adds space above the element */
+  margin-bottom: -5px; /* Adds space below the element */
+  font-weight: bold; /* Makes the font bold */
+  letter-spacing: 0.5px; /* Adds spacing between letters */
+}
+.year {
+  font-family: 'Bree Serif', serif; /* Applies Bree Serif font */
+  font-size: 1.2em; /* Sets font size */
+  color: #333333; /* Sets text color */
+  gap: 0;
+}
+.year + span {
+  display: inline; /* Ensures this span is also inline */
+  margin-left: 0px; /* Optional, add some space between text if needed */
+}
+.imp {
+  display: flex;
+  flex-direction: row-reverse; /* Image on the right, text on the left */
+  align-items: center; /* Center align items vertically */
+  gap: 0px; /* Space between image and text */
+  justify-content: space-between;
+}
+.credit {
+  display: flex;
+  flex-direction: column; /* Stack text elements vertically */
+  justify-content: center; /* Center align text vertically within .credit */
+  gap: 1px;
+  align-items: flex-start;
+}
